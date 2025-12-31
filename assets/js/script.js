@@ -28,7 +28,21 @@ function addOrUpdateStudent(){
 
   if(error) return;
 
-  
+  // Duplicate check (Name + Roll)
+const isDuplicate = students.some((student, index) => {
+  // while editing, ignore the same record
+  if (editIndex !== null && index === editIndex) return false;
+
+  return (
+    student.name.toLowerCase() === name.toLowerCase() &&
+    student.roll === roll
+  );
+});
+
+if (isDuplicate) {
+  alert("Student with same Name and Roll Number already exists!");
+  return;
+}
 
   if(editIndex === null){
     students.push({ name, roll });
