@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Student Management System</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body class="light">
+
+  <div class="page">
+    <div class="container">
+      <header>
+        <h1>Student Management System</h1>
+        <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+      </header>
+
+      <div class="form-card">
+        <div class="field">
+          <input type="text" id="name" placeholder="Student Name" />
+          <small class="hint">e.g. Aditya Patil</small>
+          <small id="nameError" class="error"></small>
+        </div>
+
+        <div class="field">
+          <input type="text" id="roll" placeholder="Roll Number" />
+          <small class="hint">e.g. 12345</small>
+          <small id="rollError" class="error"></small>
+        </div>
+
+        <button onclick="addOrUpdateStudent()">Save Student</button>
+      </div>
+
+      <input
+        type="text"
+        id="search"
+        class="search"
+        placeholder="Search by name or roll number"
+        onkeyup="renderStudents()"
+      />
+
+      <ul id="studentList" class="list"></ul>
+    </div>
+  </div>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
